@@ -328,7 +328,10 @@ export default {
       this.errorMessage = '';
       
       try {
-        const response = await axios.post('http://localhost:8000/api/rsvps', this.form);
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/rsvps`,
+          this.form
+        );
         
         this.submitSuccess = true;
         this.successMessage = response.data.message;
